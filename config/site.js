@@ -2,36 +2,34 @@ module.exports = {
   pathPrefix: '/',
   keywords: [
     'Software Engineer',
-    'SwiftUI',
+    'Vue.js',
     'React',
-    'Redux',
-    'Typescript',
-    'Jest',
-    'Kubernetes',
-    'Docker',
-    'Entreprise',
+    'TypeScript',
     'Frontend',
-    'Engineering',
-    'Blog',
-    'iOS',
-    'native',
-    'serverless',
+    'Personal Knowledge Management',
+    'Obsidian',
+    'Anki',
+    'Germany',
+    'Expat Experience',
+    'Podcast',
+    'Video Content Creation',
+    'Artificial Intelligence',
   ],
-  title: "Maxime Heckel's Blog",
-  titleAlt: 'Maxime Heckel | Blog',
+  title: "Mustafa Sarac's Blog",
+  titleAlt: 'Mustafa Sarac | Blog',
   description:
-    "Hi I'm Maxime, and this is my blog. Here, I share through my writing my experience as a frontend engineer and everything I'm learning about on React, Shaders, React Three Fiber, Framer Motion, and more.",
-  url: 'https://blog.maximeheckel.com', // Site domain without trailing slash
-  siteUrl: 'https://blog.maximeheckel.com/', // url + pathPrefix
+    "Hi, I'm Mustafa. On this blog, I share my experiences as a frontend engineer and everything I'm learning about Vue.js, React, TypeScript, personal knowledge management, artificial intelligence, and more.",
+  url: 'https://mustafasarac.com', // Site domain without trailing slash
+  siteUrl: 'https://mustafasarac.com/', // url + pathPrefix
   siteLanguage: 'en', // Language Tag on <html> element
   logo: 'src/static/logo/logo.png',
-  image: 'https://blog.maximeheckel.com/static/og/main-og-image.png',
+  image: 'https://mustafasarac.com/static/og/main-og-image.png',
   favicon: 'static/favicon.png', // Manifest favicon generation
-  shortName: 'MaximeHeckel', // Shortname for manifest, must be shorter than 12 characters
-  author: 'Maxime Heckel', // Author for schemaORGJSONLD
+  shortName: 'MustafaSarac', // Shortname for manifest, must be shorter than 12 characters
+  author: 'Mustafa Sarac', // Author for schemaORGJSONLD
   themeColor: '#000000',
   backgroundColor: '#ffffff',
-  twitter: '@MaximeHeckel', // Twitter Username
+  twitter: '@mustafasaracAI', // Twitter Username
   twitterDesc:
-    'Maxime Heckel is a lead frontend engineer and space enthusiast currently based in New York.',
+    'Mustafa Sarac is a frontend engineer and personal knowledge management enthusiast based in Germany.',
 };

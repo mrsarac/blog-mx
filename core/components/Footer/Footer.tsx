@@ -23,7 +23,6 @@ const FooterContent = styled(Flex, {
   width: '100%',
 });
 
-// TODO: Make more modular
 const Footer = () => (
   <FooterBlock data-testid="footer">
     <Grid gapX={4} templateColumns={templateColumnsMedium}>
@@ -37,28 +36,16 @@ const Footer = () => (
         justifyContent="space-evenly"
         gap={6}
       >
-        <Grid css={{ width: '100%' }} templateColumns="repeat(3, 1fr)">
+        <Grid css={{ width: '100%' }} templateColumns="repeat(1, 1fr)">
           <Grid.Item>
             <Text size={1}>
-              <Grid>
+              <Flex justifyContent="space-between">
                 <Link href="/" legacyBehavior passHref>
                   <Anchor discreet>Home</Anchor>
                 </Link>
-                <Link href="/design" legacyBehavior passHref>
-                  <Anchor discreet>Design</Anchor>
-                </Link>
-                <Link href="/rss.xml" legacyBehavior passHref>
-                  <Anchor discreet>RSS</Anchor>
-                </Link>
-              </Grid>
-            </Text>
-          </Grid.Item>
-          <Grid.Item>
-            <Text size={1}>
-              <Grid>
                 <Anchor
                   discreet
-                  href="https://twitter.com/MaximeHeckel"
+                  href="https://twitter.com/mustafasaracAI"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -66,7 +53,7 @@ const Footer = () => (
                 </Anchor>
                 <Anchor
                   discreet
-                  href="https://github.com/MaximeHeckel"
+                  href="https://github.com/mrsarac"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -74,39 +61,13 @@ const Footer = () => (
                 </Anchor>
                 <Anchor
                   discreet
-                  href="https://www.buymeacoffee.com/maximeheckel"
-                >
-                  Buy me a coffee
-                </Anchor>
-              </Grid>
-            </Text>
-          </Grid.Item>
-          <Grid.Item>
-            <Text size={1}>
-              <Grid>
-                <Anchor
-                  discreet
-                  href="https://maximeheckel.com"
+                  href="https://linkedin.com/in/mrsarac"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Portfolio
+                  LinkedIn
                 </Anchor>
-                <Anchor
-                  discreet
-                  href="https://www.figma.com/file/uvkUCtxXs7Vvmj58sHh0TE/Maxime's-Public-Roadmap?node-id=0%3A1"
-                >
-                  Roadmap
-                </Anchor>
-                <Anchor
-                  discreet
-                  href="https://buttondown.email/MaximeHeckel/archive/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Newsletter
-                </Anchor>
-              </Grid>
+              </Flex>
             </Text>
           </Grid.Item>
         </Grid>
@@ -118,10 +79,10 @@ const Footer = () => (
             variant="primary"
             weight="3"
           >
-            © {new Date().getFullYear()} Maxime Heckel ——{' '}
-            <EM size="1">New York</EM>
+            © {new Date().getFullYear()} Mustafa Saraç ——{' '}
+            <EM size="1">Köln</EM>
           </Text>
-          <Logo alt="Maxime Heckel's logo" size={35} />
+          <Logo alt="Mustafa Saraç's logo" size={35} />
         </FooterContent>
       </Flex>
     </Grid>

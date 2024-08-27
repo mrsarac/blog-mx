@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import {
   styled,
   Anchor,
@@ -82,8 +81,8 @@ const IndexPage = (props: Props) => {
       <Grid gapX={4} gapY={12} templateColumns={templateColumnsMedium}>
         <Grid.Item col={2}>
           <Flex alignItems="start" direction="column" gap="5">
-            <H1>
-              Hi <WavingHand /> I'm Maxime, and this is my blog.{' '}
+          <H1>
+              Hi <WavingHand /> I'm Mustafa, and this is my blog.{' '}
               <Text
                 css={{
                   lineHeight: 'unset',
@@ -93,9 +92,7 @@ const IndexPage = (props: Props) => {
                 size="7"
                 weight="4"
               >
-                Here, I share through my writing my experience as a frontend
-                engineer and everything I'm learning about on React, Shaders,
-                React Three Fiber, Framer Motion, and more.
+                Here, I share through my writing my experience as a frontend engineer and everything I'm learning about on Vue.js, TypeScript, TailwindCSS, and more. I also share insights on my personal projects, music journey, and thoughts on personal knowledge management.
               </Text>
             </H1>
             <Flex
@@ -105,153 +102,26 @@ const IndexPage = (props: Props) => {
                 marginRight: '-var(--space-3)',
               }}
             >
+
               <a
-                href="https://maximeheckel.com"
-                style={{ textDecoration: 'none' }}
-                tabIndex={-1}
-              >
-                <Button
-                  variant="secondary"
-                  endIcon={<Icon.External size="4" />}
-                >
-                  About me
-                </Button>
-                <VisuallyHidden as="p">
-                  Link redirects to my portfolio https://maximeheckel.com.
-                </VisuallyHidden>
-              </a>
-              <a
-                href="https://twitter.com/MaximeHeckel"
+                href="https://twitter.com/mustafasaracAI"
                 style={{ textDecoration: 'none' }}
                 tabIndex={-1}
               >
                 <Button variant="secondary" endIcon={<Icon.Twitter size="4" />}>
-                  @MaximeHeckel
+                  @mustafasaracAI
                 </Button>
                 <VisuallyHidden as="p">
                   Link redirects to my Twitter profile page
-                  https://twitter.com/MaximeHeckel.
+                  https://twitter.com/mustafasaracAI.
                 </VisuallyHidden>
               </a>
             </Flex>
           </Flex>
         </Grid.Item>
-        <Grid.Item as="section" col={2}>
-          <Flex alignItems="start" direction="column" gap="5">
-            <H2>Newsletter</H2>
-            <NewsletterForm large />
-          </Flex>
-        </Grid.Item>
-        <Grid.Item as="section" col={2}>
-          <Flex alignItems="start" direction="column" gap="5">
-            <H2>Featured</H2>
-            <Grid
-              as="ul"
-              css={{
-                margin: 0,
-                padding: 0,
-              }}
-              data-testid="featured-list"
-              gapY={4}
-            >
-              {posts
-                .filter((post) => post.featured)
-                .map((post) => {
-                  return (
-                    <motion.li
-                      style={{
-                        position: 'relative',
-                        marginLeft: '-var(--space-1)',
-                        marginRight: '-var(--space-1)',
-                        listStyle: 'none',
-                        cursor: 'pointer',
-                        marginBottom: 'calc(1.45rem / 2)',
-                        lineHeight: '1.9',
-                        letterSpacing: '0.3px',
-                      }}
-                      key={post.slug}
-                      data-testid="featured-article-item"
-                      initial="initial"
-                      whileHover="hover"
-                    >
-                      <Link
-                        href={`/posts/${post.slug}/`}
-                        passHref
-                        style={{
-                          textDecoration: 'none',
-                          color: 'var(--text-secondary)',
-                        }}
-                      >
-                        <Glow
-                          css={{
-                            background: post.colorFeatured,
-                          }}
-                          variants={glowVariants}
-                          transition={{
-                            type: 'tween',
-                            ease: 'easeOut',
-                            duration: 0.4,
-                          }}
-                        />
-                        <Flex
-                          css={{
-                            height: '95%',
-                            width: '105%',
-                            position: 'absolute',
-                            borderRadius: 'var(--border-radius-2)',
-                            top: '50%',
-                            left: '50%',
-                            background: 'var(--background)',
-                            transform: 'translateY(-50%) translateX(-50%)',
-                            filter: 'blur(20px)',
-                            transition: '0.5s',
-
-                            '@media(max-width: 700px)': {
-                              display: 'none',
-                            },
-                          }}
-                        />
-                        <Card<MotionProps>
-                          as={motion.div}
-                          variants={cardVariants}
-                          transition={{
-                            type: 'tween',
-                            ease: 'easeOut',
-                            duration: 0.4,
-                          }}
-                          depth={1}
-                        >
-                          <Card.Body>
-                            <H3
-                              gradient
-                              css={{
-                                marginBottom: '8px',
-                                backgroundImage: post.colorFeatured!,
-                              }}
-                            >
-                              {post.title}
-                            </H3>
-                            <Text
-                              as="p"
-                              css={{ marginBottom: '0px' }}
-                              size="2"
-                              weight="3"
-                              variant="tertiary"
-                            >
-                              {post.subtitle}
-                            </Text>
-                          </Card.Body>
-                        </Card>
-                      </Link>
-                    </motion.li>
-                  );
-                })}
-            </Grid>
-          </Flex>
-        </Grid.Item>
         <Grid.Item col={2} as="section">
           <Flex alignItems="start" direction="column" gap="5">
-            <H2>All articles</H2>
+            <H2></H2>
             <Grid
               as="ul"
               css={{
@@ -278,7 +148,7 @@ const IndexPage = (props: Props) => {
                     css={{
                       listStyle: 'none',
                       cursor: 'pointer',
-                      lineHeight: '1.9',
+                      lineHeight: '1.8',
                       letterSpacing: '0.3px',
                     }}
                     key={post.slug}
@@ -295,7 +165,6 @@ const IndexPage = (props: Props) => {
                         {currentYear}
                       </Text>
                     ) : null}
-                    {/* Revisit this component: merge Anchor and block together (extend block from Anchor) */}
                     <Link
                       href={`/posts/${post.slug}/`}
                       passHref
@@ -322,19 +191,7 @@ const IndexPage = (props: Props) => {
                 );
               })}
             </Grid>
-            <Card css={{ marginBottom: 'var(--space-9)', width: '100%' }}>
-              <Card.Body
-                alignItems="start"
-                as={Flex}
-                direction="column"
-                gap="5"
-              >
-                <H3>#BlackLivesMatter</H3>
-                <Anchor underline href="https://blacklivesmatters.carrd.co/">
-                  Click here to find out how you can help.
-                </Anchor>
-              </Card.Body>
-            </Card>
+ 
           </Flex>
         </Grid.Item>
       </Grid>
@@ -354,8 +211,8 @@ const Glow = styled(motion.div, {
   left: '0',
   width: '100%',
   height: '100%',
-  webkitFilter: 'blur(15px)',
-  filter: 'blur(15px)',
+  webkitFilter: 'blur(1px)',
+  filter: 'blur(1px)',
   borderRadius: 'var(--border-radius-2)',
 });
 
