@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const ContentSecurityPolicy = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com; 
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
     child-src *.youtube.com *.google.com *.twitter.com *.codesandbox.io;
     style-src 'self' 'unsafe-inline' *.googleapis.com;
     img-src * blob: data:;
@@ -46,9 +46,11 @@ const securityHeaders = [
 ];
 
 module.exports = withBundleAnalyzer({
+  // output: 'export',
   reactStrictMode: false, // Hydration hatalarını azaltmak için
   trailingSlash: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',

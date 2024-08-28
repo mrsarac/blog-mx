@@ -22,9 +22,6 @@ import { HeaderProps } from './types';
 import { templateColumnsMedium } from 'styles/grid';
 
 // TODO Abstract these out
-const CommandCenterButton = dynamic(
-  () => import('../Buttons/CommandCenterButton')
-);
 const LightDarkSwitcher = dynamic(() => import('../Buttons/LightDarkSwitcher'));
 const Search = dynamic(() => import('../Search'));
 
@@ -91,10 +88,6 @@ const Header = (props: HeaderProps) => {
               {title ? <HeaderTitle text={title} /> : null}
             </Flex>
             <Flex gap={3}>
-              {/* <CommandCenterButton
-                isSearchShown={isSearchOpen}
-                onClick={() => setIsSearchOpen(true)}
-              /> */}
               <LightDarkSwitcher />
             </Flex>
           </HeaderContent>

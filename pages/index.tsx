@@ -1,9 +1,7 @@
 import {
   styled,
-  Anchor,
   Box,
   Button,
-  Card,
   Flex,
   Grid,
   Icon,
@@ -11,11 +9,9 @@ import {
   VisuallyHidden,
   H1,
   H2,
-  H3,
 } from '@maximeheckel/design-system';
 import { format } from 'date-fns';
-import { motion, MotionProps } from 'framer-motion';
-import dynamic from 'next/dynamic';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Layout from '@core/layout';
 import { getAllFilesFrontMatter } from 'lib/mdx';
@@ -23,55 +19,46 @@ import { Post } from 'types/post';
 import React from 'react';
 import { templateColumnsMedium } from 'styles/grid';
 
-const NewsletterForm = dynamic(() => import('@core/components/NewsletterForm'));
-
 interface Props {
   posts: Post[];
 }
 
-const WavingHand = () => (
-  <motion.div
-    style={{
-      marginBottom: '-20px',
-      marginRight: '-45px',
-      paddingBottom: '20px',
-      paddingRight: '45px',
-      display: 'inline-block',
-    }}
-    animate={{ rotate: 20 }}
-    transition={{
-      repeat: 7,
-      repeatType: 'mirror',
-      duration: 0.2,
-      delay: 0.5,
-      ease: 'easeInOut',
-      type: 'tween',
-    }}
-  >
-    👋🏻
-  </motion.div>
-);
+const WavingHand = () => {
+  const [isClient, setIsClient] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  return (
+    <motion.div
+      style={{
+        marginBottom: '-20px',
+        marginRight: '-45px',
+        paddingBottom: '20px',
+        paddingRight: '45px',
+        display: 'inline-block',
+      }}
+      animate={isClient ? { rotate: 20 } : {}}
+      transition={
+        isClient
+          ? {
+              repeat: 7,
+              repeatType: 'mirror',
+              duration: 0.2,
+              delay: 0.5,
+              ease: 'easeInOut',
+              type: 'tween',
+            }
+          : {}
+      }
+    >
+      👋🏻
+    </motion.div>
+  );
+};
 
 let year = 0;
-
-const cardVariants = {
-  hover: {
-    scale: 1.05,
-  },
-  initial: {
-    scale: 1,
-  },
-};
-
-const glowVariants = {
-  hover: {
-    opacity: 0.8,
-  },
-  initial: {
-    scale: 1.05,
-    opacity: 0,
-  },
-};
 
 const IndexPage = (props: Props) => {
   const { posts } = props;
@@ -81,8 +68,8 @@ const IndexPage = (props: Props) => {
       <Grid gapX={4} gapY={12} templateColumns={templateColumnsMedium}>
         <Grid.Item col={2}>
           <Flex alignItems="start" direction="column" gap="5">
-          <H1>
-              Hi <WavingHand /> I'm Mustafa, and this is my blog.{' '}
+            <H1>
+              Hi <WavingHand /> I&apos;m Mustafa, and this is my blog.{' '}
               <Text
                 css={{
                   lineHeight: 'unset',
@@ -92,7 +79,11 @@ const IndexPage = (props: Props) => {
                 size="7"
                 weight="4"
               >
-                Here, I share through my writing my experience as a frontend engineer and everything I'm learning about on Vue.js, TypeScript, TailwindCSS, and more. I also share insights on my personal projects, music journey, and thoughts on personal knowledge management.
+                Here, I share through my writing my experience as a frontend
+                engineer and everything I&apos;m learning about on Vue.js,
+                TypeScript, TailwindCSS, and more. I also share insights on my
+                personal projects, music journey, and thoughts on personal
+                knowledge management.
               </Text>
             </H1>
             <Flex
@@ -102,7 +93,6 @@ const IndexPage = (props: Props) => {
                 marginRight: '-var(--space-3)',
               }}
             >
-
               <a
                 href="https://twitter.com/mustafasaracAI"
                 style={{ textDecoration: 'none' }}
@@ -191,7 +181,6 @@ const IndexPage = (props: Props) => {
                 );
               })}
             </Grid>
- 
           </Flex>
         </Grid.Item>
       </Grid>
@@ -204,17 +193,6 @@ export async function getStaticProps() {
 
   return { props: { posts } };
 }
-
-const Glow = styled(motion.div, {
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%',
-  webkitFilter: 'blur(1px)',
-  filter: 'blur(1px)',
-  borderRadius: 'var(--border-radius-2)',
-});
 
 const Block = styled(Box, {
   display: 'flex',
