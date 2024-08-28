@@ -18,8 +18,8 @@ const StyledSection = styled('section', {
 
 
 
-const Signature = ({ title, url }: { title: string; url: string }) => {
-  const text = `${title} by @MaximeHeckel ${url}`;
+const Signature = ({  }: { title: string; url: string }) => {
+
 
   return (
     <StyledSection data-testid="signature">
