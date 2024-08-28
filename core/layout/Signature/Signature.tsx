@@ -122,16 +122,16 @@ const Signature = ({ title, url }: { title: string; url: string }) => {
         </Text>
 
         <Box>
-          <Text as="p" variant="primary">
+          {/* <Text as="p" variant="primary">
             Have a wonderful day.
-          </Text>
+          </Text> */}
           <Flex alignItems="start">
-            <Text as="p" variant="primary">
+            {/* <Text as="p" variant="primary">
               – Maxime
-            </Text>
+            </Text> */}
           </Flex>
         </Box>
-        <SignatureSVG />
+        {/* <SignatureSVG /> */}
       </Flex>
       {/* <NewsletterForm /> */}
     </StyledSection>
