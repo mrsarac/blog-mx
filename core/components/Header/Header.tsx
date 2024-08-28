@@ -84,17 +84,17 @@ const Header = (props: HeaderProps) => {
                     href="/"
                     passHref
                   >
-                    <Logo alt="Logo" size={40} />
+                    <Logo alt="Logo" />
                   </Link>
                 </span>
               </Tooltip>
               {title ? <HeaderTitle text={title} /> : null}
             </Flex>
             <Flex gap={3}>
-              <CommandCenterButton
+              {/* <CommandCenterButton
                 isSearchShown={isSearchOpen}
                 onClick={() => setIsSearchOpen(true)}
-              />
+              /> */}
               <LightDarkSwitcher />
             </Flex>
           </HeaderContent>

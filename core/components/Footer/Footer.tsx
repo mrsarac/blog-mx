@@ -24,7 +24,9 @@ const FooterContent = styled(Flex, {
 });
 
 const Footer = () => (
-  <FooterBlock data-testid="footer">
+  <FooterBlock data-testid="footer" css={{
+    marginTop: '100px'
+  }}>
     <Grid gapX={4} templateColumns={templateColumnsMedium}>
       <Flex
         as={Grid.Item}
@@ -51,14 +53,7 @@ const Footer = () => (
                 >
                   Twitter
                 </Anchor>
-                <Anchor
-                  discreet
-                  href="https://github.com/mrsarac"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Github
-                </Anchor>
+
                 <Anchor
                   discreet
                   href="https://linkedin.com/in/mrsarac"
@@ -71,7 +66,9 @@ const Footer = () => (
             </Text>
           </Grid.Item>
         </Grid>
-        <FooterContent alignItems="center" justifyContent="space-between">
+        <FooterContent 
+
+         justifyContent="end">
           <Text
             as="p"
             css={{ margin: 0 }}
@@ -80,9 +77,9 @@ const Footer = () => (
             weight="3"
           >
             © {new Date().getFullYear()} Mustafa Saraç ——{' '}
-            <EM size="1">Köln</EM>
+            <EM size="1">Cologne</EM>
           </Text>
-          <Logo alt="Mustafa Saraç's logo" size={35} />
+          <Logo alt="Mustafa Saraç's logo" size={30} />
         </FooterContent>
       </Flex>
     </Grid>
