@@ -46,7 +46,7 @@ const Header = (props: HeaderProps) => {
 
   return (
     <>
-      <a
+      {/* <a
         className="hidden-layout h-card"
         data-testid="twitter-link"
         aria-label="Follow me on Twitter"
@@ -55,7 +55,7 @@ const Header = (props: HeaderProps) => {
         href="https://twitter.com/MaximeHeckel"
       >
         @MaximeHeckel
-      </a>
+      </a> */}
       <Search open={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
       <HeaderWrapper
         initial="open"

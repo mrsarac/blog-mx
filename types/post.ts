@@ -14,6 +14,7 @@ export type Post = {
   slug: string;
   subtitle: string;
   title: string;
+  language: string;
 };
 
 export type FrontMatterPost = {

@@ -85,14 +85,14 @@ class MyDocument extends Document {
             type="image/png"
           />
           <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-          <link
+          {/* <link
             rel="webmention"
             href="https://webmention.io/blog.maximeheckel.com/webmention"
           />
           <link
             rel="pingback"
             href="https://webmention.io/blog.maximeheckel.com/xmlrpc"
-          />
+          /> */}
           <style
             id="stitches"
             dangerouslySetInnerHTML={{ __html: getCssText() }}

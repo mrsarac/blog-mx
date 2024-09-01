@@ -167,7 +167,7 @@ const CommandCenterStatic = (props: CommandCenterStaticProps) => {
           id="twitter-social-link"
           key="twitter-social-link"
         >
-          <a
+          {/* <a
             href="https://twitter.com/MaximeHeckel"
             target="_blank"
             rel="noopener noreferrer"
@@ -178,7 +178,7 @@ const CommandCenterStatic = (props: CommandCenterStaticProps) => {
               Link redirects to my Twitter profile page
               https://twitter.com/MaximeHeckel.
             </VisuallyHidden>
-          </a>
+          </a> */}
         </S.Item>
         <S.Item
           data-testid="email-link"

@@ -63,6 +63,9 @@ let year = 0;
 const IndexPage = (props: Props) => {
   const { posts } = props;
 
+  const englishPosts = posts.filter((post) => post.language === 'en');
+  // const turkishPosts = posts.filter((post) => post.language === 'tr');
+
   return (
     <Layout footer header headerProps={{ offsetHeight: 256 }}>
       <Grid gapX={4} gapY={12} templateColumns={templateColumnsMedium}>
@@ -111,7 +114,7 @@ const IndexPage = (props: Props) => {
         </Grid.Item>
         <Grid.Item col={2} as="section">
           <Flex alignItems="start" direction="column" gap="5">
-            <H2></H2>
+
             <Grid
               as="ul"
               css={{
@@ -121,7 +124,7 @@ const IndexPage = (props: Props) => {
               data-testid="article-list"
               gapY={1}
             >
-              {posts.map((post) => {
+              {englishPosts.map((post) => {
                 const currentYear = new Date(post.date).getFullYear();
                 let printYear;
 
@@ -181,6 +184,8 @@ const IndexPage = (props: Props) => {
                 );
               })}
             </Grid>
+
+
           </Flex>
         </Grid.Item>
       </Grid>
