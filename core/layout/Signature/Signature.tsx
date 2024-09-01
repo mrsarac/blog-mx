@@ -6,8 +6,8 @@ import { styled, Box, Flex } from '@maximeheckel/design-system';
 const StyledSection = styled('section', {
   background: 'var(--foreground)',
   color: 'var(--text-primary)',
-  paddingBottom: 48,
-  paddingTop: 48,
+  paddingBottom: 0,
+  paddingTop: 0,
   width: '100%',
 
   '@media (max-width: 700px)': {
