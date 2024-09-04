@@ -8,7 +8,6 @@ import {
   Text,
   VisuallyHidden,
   H1,
-  H2,
 } from '@maximeheckel/design-system';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
