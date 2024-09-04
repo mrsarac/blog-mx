@@ -46,7 +46,7 @@ const securityHeaders = [
 ];
 
 module.exports = withBundleAnalyzer({
-  output: 'export',
+  // output: 'export',
   reactStrictMode: false, // Hydration hatalarını azaltmak için
   trailingSlash: true,
   images: {
