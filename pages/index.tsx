@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Layout from '@core/layout';
 import { getAllFilesFrontMatter } from 'lib/mdx';
-import { Post } from 'types/post';
+import { Post } from 't"ypes/post';
 import React from 'react';
 import { templateColumnsMedium } from 'styles/grid';
 
@@ -194,7 +194,6 @@ const IndexPage = (props: Props) => {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter();
-
   return { props: { posts } };
 }
 
