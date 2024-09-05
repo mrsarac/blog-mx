@@ -179,7 +179,7 @@ const BlogLayout = ({ children, frontMatter, ogImage }: Props) => {
             </Flex>
           </Grid.Item>
         </Grid>
-        <Signature title={title} url={postUrl} />
+        <Signature />
         <WebmentionBlogData date={date} postUrl={postUrl} subtitle={subtitle} />
       </article>
     </Layout>
