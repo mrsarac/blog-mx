@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <Layout footer header>
       <Box css={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
-        <H1>About Me</H1>
+        <H1 css={{ marginBottom: '2rem' }}>About Me</H1>
         <Text as="p" css={{ marginBottom: '1rem' }}>
           Hello, I am Mustafa Saraç. I am a technology enthusiast, software
           developer, designer, and musician. I have been working in web design

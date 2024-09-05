@@ -95,6 +95,18 @@ const IndexPage = (props: Props) => {
                 marginRight: '-var(--space-3)',
               }}
             >
+              <Link
+                href="/about-me"
+                style={{ textDecoration: 'none' }}
+                passHref
+              >
+                <Button
+                  variant="secondary"
+                  endIcon={<Icon.Portfolio size="4" />}
+                >
+                  About Me
+                </Button>
+              </Link>
               <a
                 href="https://twitter.com/mustafasaracAI"
                 style={{ textDecoration: 'none' }}
