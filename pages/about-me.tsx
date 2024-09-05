@@ -2,21 +2,76 @@ import React from 'react';
 import { Anchor, Box, Flex, Text, H1 } from '@maximeheckel/design-system';
 import Layout from '@core/layout';
 
-const CVPage = () => {
+const AboutPage = () => {
   return (
     <Layout footer header>
       <Box css={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
-        <H1>Curriculum Vitae</H1>
+        <H1>About Me</H1>
         <Text as="p" css={{ marginBottom: '1rem' }}>
-          Welcome to my CV page. Here you can find information about my
-          professional background and experience.
+          Hello, I am Mustafa Saraç. I am a technology enthusiast, software
+          developer, designer, and musician. I have been working in web design
+          and development since 2000. I completed my masters degree in
+          Information Technologies at Sabancı University.
         </Text>
-        <Text as="p" css={{ marginBottom: '2rem' }}>
-          For a detailed version of my CV, please download the PDF version
-          below.
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          Throughout my career, I have worked for leading media companies in
+          Turkey. I conducted UX tests, designed web interfaces, and played an
+          active role in bringing them to life. For a period, I led a frontend
+          team of five people. Currently, I am living in Cologne, Germany, and
+          working as a front-end developer for the TOMRA Sorting Digital team.
         </Text>
-        <Flex justifyContent="center">
-          <Anchor href="/MustafaSaracCV.pdf" download>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          Outside of work, I love being productive. I have been playing drums as
+          an amateur for 15 years and have been learning to play the cajón for
+          the past year. I am actively involved in a music band, and we give
+          small concerts.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          I value personal development. I keep a daily journal, enjoy reading
+          books, and like to research time management. I have a special interest
+          in Personal Knowledge Management (PKM) and conduct experimental work
+          in this area. I even developed and published my own note-taking
+          application called Phinote for a short time.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          I enjoy sharing my ideas. I write articles on my personal blog at
+          irregular intervals and create content for my YouTube channel.
+          Additionally, I share my discoveries related to my areas of interest
+          through a weekly email newsletter.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          Additionally, I am deeply fascinated by the advancements in artificial
+          intelligence. I eagerly follow the latest AI technologies, open-source
+          projects, and potential opportunities in this field. I am particularly
+          excited about discovering how AI is transforming our daily lives and
+          the business world. Keeping up-to-date with AI developments has become
+          a passion of mine, and I am constantly exploring ways to incorporate
+          AI capabilities into my own projects.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          I love cycling, walking, and thinking while walking. I have noticed
+          that during these activities, my mind opens up, and I generate
+          creative ideas. I use talking to myself as an effective method for
+          solving problems.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          My wife Ayşegül, my son Jerfi, and I have been living in Cologne since
+          2020. This new life experience has given me the opportunity to
+          encounter different cultures and ways of working.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          I have a tendency to think quickly and respond promptly, which can
+          sometimes be a weakness. However, my determination to finish a task
+          once I set my mind to it is one of my favorite qualities.
+        </Text>
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          I always enjoy sharing my experiences in technology, design, music,
+          and personal development, and learning new things. If you &apos; d
+          like to get in touch with me, you can reach me through my social media
+          accounts or via email.
+        </Text>
+        <Flex justifyContent="center" css={{ marginTop: '3rem' }}>
+          <Anchor href="/static/cv/MustafaSaracCV.pdf" download>
             Download CV (PDF)
           </Anchor>
         </Flex>
@@ -25,4 +80,4 @@ const CVPage = () => {
   );
 };
 
-export default CVPage;
+export default AboutPage;

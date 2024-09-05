@@ -1,8 +1,5 @@
 import { styled, Box, Flex } from '@maximeheckel/design-system';
 
-
-// const NewsletterForm = dynamic(() => import('@core/components/NewsletterForm'));
-
 const StyledSection = styled('section', {
   background: 'var(--foreground)',
   color: 'var(--text-primary)',
@@ -16,11 +13,7 @@ const StyledSection = styled('section', {
   },
 });
 
-
-
-const Signature = ({  }: { title: string; url: string }) => {
-
-
+const Signature = ({}) => {
   return (
     <StyledSection data-testid="signature">
       <Flex
@@ -31,8 +24,7 @@ const Signature = ({  }: { title: string; url: string }) => {
           margin: '0 auto',
         }}
         gap="5"
-      > 
-
+      >
         <Box>
           {/* <Text as="p" variant="primary">
             Have a wonderful day.
