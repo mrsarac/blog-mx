@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Layout from '@core/layout';
 import { getAllFilesFrontMatter } from 'lib/mdx';
-import { Post } from 't"ypes/post';
+import { Post } from 'types/post';
 import React from 'react';
 import { templateColumnsMedium } from 'styles/grid';
 
@@ -113,7 +113,6 @@ const IndexPage = (props: Props) => {
         </Grid.Item>
         <Grid.Item col={2} as="section">
           <Flex alignItems="start" direction="column" gap="5">
-
             <Grid
               as="ul"
               css={{
@@ -183,8 +182,6 @@ const IndexPage = (props: Props) => {
                 );
               })}
             </Grid>
-
-
           </Flex>
         </Grid.Item>
       </Grid>
