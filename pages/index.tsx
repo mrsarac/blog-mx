@@ -57,13 +57,12 @@ const WavingHand = () => {
   );
 };
 
-let year = 0;
-
 const IndexPage = (props: Props) => {
   const { posts } = props;
 
-  const englishPosts = posts.filter((post) => post.language === 'en');
-  // const turkishPosts = posts.filter((post) => post.language === 'tr');
+  const englishPosts = posts
+    .filter((post) => post.language === 'en')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <Layout footer header headerProps={{ offsetHeight: 256 }}>
@@ -135,16 +134,7 @@ const IndexPage = (props: Props) => {
               gapY={1}
             >
               {englishPosts.map((post) => {
-                const currentYear = new Date(post.date).getFullYear();
-                let printYear;
-
-                if (currentYear !== year) {
-                  printYear = true;
-                  year = currentYear;
-                } else {
-                  printYear = false;
-                }
-
+                const postDate = new Date(post.date);
                 return (
                   <Box
                     as="li"
@@ -157,17 +147,6 @@ const IndexPage = (props: Props) => {
                     key={post.slug}
                     data-testid="article-item"
                   >
-                    {printYear ? (
-                      <Text
-                        as="p"
-                        weight="4"
-                        css={{
-                          padding: 'var(--space-6) 0px',
-                        }}
-                      >
-                        {currentYear}
-                      </Text>
-                    ) : null}
                     <Link
                       href={`/posts/${post.slug}/`}
                       passHref
@@ -180,12 +159,12 @@ const IndexPage = (props: Props) => {
                           variant="tertiary"
                           weight="3"
                           css={{
-                            minWidth: '52px',
+                            minWidth: '100px',
                             marginRight: '32px',
                             marginTop: '2px',
                           }}
                         >
-                          {format(new Date(Date.parse(post.date)), 'MMM dd')}
+                          {format(postDate, 'MMM dd, yyyy')}
                         </Text>
                         <Text weight="3">{post.title}</Text>
                       </Block>
