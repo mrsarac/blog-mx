@@ -82,7 +82,16 @@ const AboutPage = () => {
           like to get in touch with me, you can reach me through my social media
           accounts or via email.
         </Text>
-
+      </Box>
+      <Box>
+        <a href="https://app.netlify.com/sites/mustafasarac/deploys">
+          <Image
+            src="https://api.netlify.com/api/v1/badges/ce005a00-4fde-4ede-abfe-1f59285ae3bb/deploy-status"
+            alt="Netlify Status"
+            width={16}
+            height={16}
+          />
+        </a>
       </Box>
     </Layout>
   );
