@@ -61,7 +61,7 @@ const IndexPage = (props: Props) => {
   const { posts } = props;
 
   const englishPosts = posts
-    .filter((post) => post.language === 'en')
+    // .filter((post) => post.language === 'en')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
