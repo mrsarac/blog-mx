@@ -1,5 +1,6 @@
 import React from 'react';
-import { Anchor, Box, Flex, Text, H1 } from '@maximeheckel/design-system';
+import { Box, Text, H1 } from '@maximeheckel/design-system';
+import Image from 'next/legacy/image';
 import Layout from '@core/layout';
 
 const AboutPage = () => {
@@ -7,6 +8,17 @@ const AboutPage = () => {
     <Layout footer header>
       <Box css={{ maxWidth: '800px', margin: '0 auto', padding: '2rem' }}>
         <H1 css={{ marginBottom: '2rem' }}>About Me</H1>
+        <Image
+          src="/static/images/about-me/my-family.jpg"
+          alt="My Family"
+          width={500}
+          height={667}
+          layout="intrinsic"
+        />
+        <Text as="p" css={{ marginBottom: '1rem' }}>
+          This is my family.
+        </Text>
+
         <Text as="p" css={{ marginBottom: '1rem' }}>
           Hello, I am Mustafa Saraç. I am a technology enthusiast, software
           developer, designer, and musician. I have been working in web design
@@ -70,11 +82,7 @@ const AboutPage = () => {
           like to get in touch with me, you can reach me through my social media
           accounts or via email.
         </Text>
-        <Flex justifyContent="center" css={{ marginTop: '3rem' }}>
-          <Anchor href="/static/cv/MustafaSaracCV.pdf" download>
-            Download CV (PDF)
-          </Anchor>
-        </Flex>
+
       </Box>
     </Layout>
   );
