@@ -44,13 +44,15 @@ const AboutPage = () => {
           in Personal Knowledge Management (PKM) and conduct experimental work
           in this area. I even developed and published my own note-taking
           application called Phinote for a short time. You can check it out at{' '}
-          <a href="https://phinote.com">phinote.com</a>.
+          <a href="https://phinote.com">phinote.com</a>. I also published the
+          Phinote HTML template on{' '}
+          <a href="https://lab.mustafasarac.com/phione/">ThemeForest</a>.
         </Text>
         <Text as="p" css={{ marginBottom: '1rem' }}>
           I enjoy sharing my ideas. I write articles on my personal blog at
-          irregular intervals and create content for my YouTube channel.
-          Additionally, I share my discoveries related to my areas of interest
-          through a weekly email newsletter.
+          irregular intervals and create content for my{' '}
+          <a href="https://www.youtube.com/@mustafasarac/videos">YouTube</a>{' '}
+          channel.
         </Text>
         <Text as="p" css={{ marginBottom: '1rem' }}>
           Additionally, I am deeply fascinated by the advancements in artificial
