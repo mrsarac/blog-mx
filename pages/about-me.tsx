@@ -43,7 +43,8 @@ const AboutPage = () => {
           books, and like to research time management. I have a special interest
           in Personal Knowledge Management (PKM) and conduct experimental work
           in this area. I even developed and published my own note-taking
-          application called Phinote for a short time.
+          application called Phinote for a short time. You can check it out at{' '}
+          <a href="https://phinote.com">phinote.com</a>.
         </Text>
         <Text as="p" css={{ marginBottom: '1rem' }}>
           I enjoy sharing my ideas. I write articles on my personal blog at
