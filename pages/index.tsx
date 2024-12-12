@@ -61,7 +61,11 @@ const IndexPage = (props: Props) => {
   const { posts } = props;
 
   const englishPosts = posts
-    // .filter((post) => post.language === 'en')
+    .filter((post) => post.language === 'en')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  const turkishPosts = posts
+    .filter((post) => post.language === 'tr')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
@@ -70,7 +74,8 @@ const IndexPage = (props: Props) => {
         <Grid.Item col={2}>
           <Flex alignItems="start" direction="column" gap="5">
             <H1>
-              Hi <WavingHand /> I&apos;m Mustafa, and this is my blog.{' '}
+              Hi <WavingHand /> I&apos;m Mustafa and this is my web page{' '}
+              <br></br>
               <Text
                 css={{
                   lineHeight: 'unset',
@@ -80,11 +85,7 @@ const IndexPage = (props: Props) => {
                 size="7"
                 weight="4"
               >
-                Here, I share through my writing my experience as a frontend
-                engineer and everything I&apos;m learning about on Vue.js,
-                TypeScript, TailwindCSS, and more. I also share insights on my
-                personal projects, music journey, and thoughts on personal
-                knowledge management.
+                and explore my posts. 
               </Text>
             </H1>
             <Flex
@@ -99,10 +100,7 @@ const IndexPage = (props: Props) => {
                 style={{ textDecoration: 'none' }}
                 passHref
               >
-                <Button
-                variant="secondary"
-                  endIcon={<Icon.Arrow size="4" />}
-                >
+                <Button variant="secondary" endIcon={<Icon.Arrow size="4" />}>
                   About Me
                 </Button>
               </Link>
@@ -123,6 +121,7 @@ const IndexPage = (props: Props) => {
           </Flex>
         </Grid.Item>
         <Grid.Item col={2} as="section">
+          <h2>En</h2>
           <Flex alignItems="start" direction="column" gap="5">
             <Grid
               as="ul"
@@ -134,6 +133,61 @@ const IndexPage = (props: Props) => {
               gapY={1}
             >
               {englishPosts.map((post) => {
+                const postDate = new Date(post.date);
+                return (
+                  <Box
+                    as="li"
+                    css={{
+                      listStyle: 'none',
+                      cursor: 'pointer',
+                      lineHeight: '1.8',
+                      letterSpacing: '0.3px',
+                    }}
+                    key={post.slug}
+                    data-testid="article-item"
+                  >
+                    <Link
+                      href={`/posts/${post.slug}/`}
+                      passHref
+                      style={{ textDecoration: 'none', fontWeight: 500 }}
+                    >
+                      <Block data-testid="article-link">
+                        <Text
+                          as="p"
+                          size="1"
+                          variant="tertiary"
+                          weight="3"
+                          css={{
+                            minWidth: '100px',
+                            marginRight: '32px',
+                            marginTop: '2px',
+                          }}
+                        >
+                          {format(postDate, 'MMM dd, yyyy')}
+                        </Text>
+                        <Text weight="3">{post.title}</Text>
+                      </Block>
+                    </Link>
+                  </Box>
+                );
+              })}
+            </Grid>
+          </Flex>
+        </Grid.Item>
+
+        <Grid.Item col={2} as="section">
+          <h2>Tr</h2>
+          <Flex alignItems="start" direction="column" gap="5">
+            <Grid
+              as="ul"
+              css={{
+                margin: 0,
+                padding: 0,
+              }}
+              data-testid="article-list"
+              gapY={1}
+            >
+              {turkishPosts.map((post) => {
                 const postDate = new Date(post.date);
                 return (
                   <Box
