@@ -38,7 +38,7 @@ const Footer = () => (
         justifyContent="space-evenly"
         gap={6}
       >
-        <Grid css={{ width: '100%' }} templateColumns="repeat(1, 1fr)">
+        <Grid css={{ display:'none', width: '100%' }} templateColumns="repeat(1, 1fr)">
           <Grid.Item>
             <Text size={1}>
               <Flex justifyContent="space-between">
