@@ -85,7 +85,7 @@ const IndexPage = (props: Props) => {
                 size="7"
                 weight="4"
               >
-                and explore my posts. 
+                and explore my posts.
               </Text>
             </H1>
             <Flex
