@@ -100,8 +100,8 @@ const IndexPage = (props: Props) => {
                 passHref
               >
                 <Button
-                  variant="secondary"
-                  endIcon={<Icon.Portfolio size="4" />}
+                variant="secondary"
+                  endIcon={<Icon.Arrow size="4" />}
                 >
                   About Me
                 </Button>
