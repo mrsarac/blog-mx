@@ -1,11 +1,10 @@
-import { getCssText } from '@maximeheckel/design-system';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
 
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className="maximeheckel-light">
+      <Html lang="en">
         <Head>
           <link
             rel="preload"
@@ -85,35 +84,11 @@ class MyDocument extends Document {
             type="image/png"
           />
           <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-          {/* <link
-            rel="webmention"
-            href="https://webmention.io/blog.maximeheckel.com/webmention"
-          />
-          <link
-            rel="pingback"
-            href="https://webmention.io/blog.maximeheckel.com/xmlrpc"
-          /> */}
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         </Head>
-        <body>
-          <Script src="/sw.js"></Script>
-          <script
-            key="maximeheckel-theme"
-            dangerouslySetInnerHTML={{
-              __html: `(function() { try {
-        var mode = localStorage.getItem('mode');
-        var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
-        if (!mode && supportDarkMode)  document.documentElement.classList.add('maximeheckel-dark');
-        if (!mode) return
-        document.documentElement.classList.add('maximeheckel-' + mode);
-      } catch (e) {} })();`,
-            }}
-          />
+        <body className="bg-gray-100 text-gray-1200">
+          <Script src="/sw.js" />
           <Main />
           <NextScript />
         </body>

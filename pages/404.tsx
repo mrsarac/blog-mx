@@ -1,36 +1,23 @@
-/* eslint-disable react/no-unescaped-entities */
-import { Box, styled, Anchor, Grid, H1, H3 } from '@maximeheckel/design-system';
-import { DefaultSeo } from '@core/components/Seo';
 import Link from 'next/link';
+import { DefaultSeo } from '@core/components/Seo';
 import siteConfig from '../config/site';
-import { templateColumnsMedium } from 'styles/grid';
-
-const Wrapper = styled(Box, {
-  margin: '0 auto',
-  maxWidth: '1430px',
-  display: 'flex',
-  height: 'calc(100vh)',
-  alignItems: 'center',
-  color: 'var(--text-primary)',
-});
 
 const NotFoundPage = () => (
-  <Grid gapX={4} templateColumns={templateColumnsMedium}>
+  <div className="flex min-h-screen items-center justify-center bg-gray-100 px-6 text-gray-1200">
     <DefaultSeo title={`404: Not found - ${siteConfig.title}`} />
-    <Grid.Item as={Wrapper} col={2}>
-      <Box>
-        <H1>404 Not Found</H1>
-        <H3>
-          Oh no! You just got lost 😱! <br />
-          Don't worry I got you!{' '}
-          <Link href="/" legacyBehavior passHref>
-            <Anchor underline>Click here</Anchor>
-          </Link>{' '}
-          to go back home.
-        </H3>
-      </Box>
-    </Grid.Item>
-  </Grid>
+    <div className="max-w-xl text-center">
+      <h1 className="text-4xl font-semibold">404 – Not Found</h1>
+      <p className="mt-6 text-gray-1100">
+        Oh no! You just got lost 😱 Don&apos;t worry, I&apos;ve got you.
+      </p>
+      <Link
+        href="/"
+        className="mt-8 inline-flex items-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-1200 shadow-border transition-colors hover:bg-[#F5F4F4]"
+      >
+        Go back home
+      </Link>
+    </div>
+  </div>
 );
 
 export default NotFoundPage;

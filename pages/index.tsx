@@ -37,10 +37,10 @@ const HomePage = ({ posts }: Props) => {
   return (
     <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
       <div className="mx-auto max-w-[692px] overflow-x-hidden px-6 py-12 antialiased sm:py-32 md:overflow-x-visible md:py-16">
-        <header className="mb-32 flex flex-col items-start">
+        <header className="mb-32 flex flex-col items-start leading-7 ">
           <Link
             href="/"
-            className="inline-block text-[15px] font-medium no-underline"
+            className="inline-block font-medium no-underline"
           >
             Mustafa Saraç
           </Link>
@@ -50,18 +50,35 @@ const HomePage = ({ posts }: Props) => {
         </header>
 
         <main>
-          <span className="mb-5 block text-[15px] font-medium sm:mb-6">
+          <span className="mb-5 block text-[15px] font-medium sm:mb-6 leading-6 leading-7">
             Today
           </span>
           <p className="text-gray-1100">
-            I work as a frontend engineer at TOMRA Sorting Digital in Cologne. I
-            like building purposeful tools for designers and engineers and
-            obsessing over how interfaces feel, behave, and help people focus.
+            I lead frontend development for TOMRA Insight, TOMRA GmbH&apos;s data
+            platform in Cologne. My days are spent evolving a Vue 3
+            architecture, shaping a Storybook-driven design system with
+            TailwindCSS, and instrumenting features with GTM, Hotjar, and GA so
+            teams can ship focused, measurable interfaces.
           </p>
           <p className="mt-4 text-gray-1100">
-            Previously, I led design and development teams at major media
-            companies in Turkey. Now I write and speak about personal knowledge
-            management, productivity, and how AI is reshaping creative work.
+            Before Germany, I guided frontend and design teams across telecom
+            and media companies in Turkey, launched SaaS tools like SenderKing
+            and the Fcase fraud operations suite, and delivered responsive sites
+            for MIR MEDIA. Now I write and speak about personal knowledge
+            management, productivity, and how AI is reshaping creative work.{' '}
+            <Link href="/about-me" className="underline">
+              Learn more about me
+            </Link>{' '}
+            or check out my{' '}
+            <a
+              href="/static/cv/mustafa-sarac-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              CV
+            </a>
+            .
           </p>
 
           <section className="-mb-3 mt-16 sm:mt-32">
@@ -106,7 +123,7 @@ const HomePage = ({ posts }: Props) => {
             </div>
           </section>
 
-          <section className="mt-16 pb-1 sm:mt-32">
+          <section className="mt-16 pb-1 sm:mt-32 hidden">
             <span className="mb-5 block text-[15px] font-medium sm:mb-6">
               Newsletter
             </span>

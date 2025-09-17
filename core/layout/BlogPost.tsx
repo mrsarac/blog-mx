@@ -1,23 +1,9 @@
-import {
-  css,
-  Anchor,
-  Box,
-  Flex,
-  Grid,
-  Pill,
-  Text,
-  H1,
-} from '@maximeheckel/design-system';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
-import siteConfig from 'config/site';
-import Layout from '@core/layout';
-import TableOfContent from '@core/components/TableOfContent';
 import Seo from '@core/components/Seo';
-import { Post, ReadingTime } from 'types/post';
-import Signature from './Signature';
-import { templateColumnsSmall } from 'styles/grid';
+import siteConfig from 'config/site';
+import type { Post, ReadingTime } from 'types/post';
 
 interface WebmentionBlogDataProps {
   date: string;
@@ -25,24 +11,25 @@ interface WebmentionBlogDataProps {
   subtitle?: string;
 }
 
-const WebmentionBlogData = (props: WebmentionBlogDataProps) => {
-  const { date, postUrl, subtitle } = props;
-  return (
-    <>
-      <time
-        className="hidden-layout dt-published"
-        itemProp="datepublished"
-        dateTime={date}
-      >
-        {new Date(date).toISOString().replace('Z', '') + '+01:00'}
-      </time>
-      <a className="hidden-layout u-url" href={postUrl} />
-      {subtitle && (
-        <p className="hidden-layout p-summary e-content">{subtitle}</p>
-      )}
-    </>
-  );
-};
+const WebmentionBlogData = ({
+  date,
+  postUrl,
+  subtitle,
+}: WebmentionBlogDataProps) => (
+  <>
+    <time
+      className="hidden-layout dt-published"
+      itemProp="datepublished"
+      dateTime={date}
+    >
+      {new Date(date).toISOString().replace('Z', '') + '+01:00'}
+    </time>
+    <a className="hidden-layout u-url" href={postUrl} />
+    {subtitle ? (
+      <p className="hidden-layout p-summary e-content">{subtitle}</p>
+    ) : null}
+  </>
+);
 
 interface Props {
   children: React.ReactNode;
@@ -50,69 +37,13 @@ interface Props {
   ogImage: string;
 }
 
-const contentClass = css({
-  padding: 'var(--space-5) 0px',
-  color: 'var(--text-secondary)',
-
-  h2: {
-    marginTop: '2em',
-  },
-
-  h3: {
-    marginTop: '1.45em',
-  },
-
-  p: {
-    fontWeight: '440',
-  },
-
-  li: {
-    fontWeight: '440',
-  },
-
-  section: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 'var(--space-5)',
-    maxWidth: 700,
-    width: '100%',
-  },
-});
-
 const BlogLayout = ({ children, frontMatter, ogImage }: Props) => {
   const { date, updated, slug, subtitle, title, readingTime } = frontMatter;
   const path = `/posts/${slug}/`;
   const postUrl = `${siteConfig.url}${path}`;
 
-  const headerProps = {
-    title,
-    offsetHeight: 256,
-    showProgressBarOnMobile: true,
-  };
-
-  const [ids, setIds] = React.useState<Array<{ id: string; title: string }>>(
-    []
-  );
-
-  React.useEffect(() => {
-    /**
-     * Working around some race condition quirks :) (don't judge)
-     * TODO @MaximeHeckel: see if there's a better way through a remark plugin to do this
-     */
-    setTimeout(() => {
-      const titles = document.querySelectorAll('h2');
-      const idArrays = Array.prototype.slice
-        .call(titles)
-        .map((title) => ({ id: title.id, title: title.innerText })) as Array<{
-        id: string;
-        title: string;
-      }>;
-      setIds(idArrays);
-    }, 500);
-  }, [slug]);
-
   return (
-    <Layout footer={true} header={true} headerProps={headerProps}>
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
       <Seo
         title={title}
         desc={subtitle}
@@ -122,67 +53,77 @@ const BlogLayout = ({ children, frontMatter, ogImage }: Props) => {
         updated={updated}
       />
       <article className="h-entry">
-        <Grid gapX={4} templateColumns={templateColumnsSmall}>
-          <Grid.Item col={2}>
-            <Flex
-              alignItems="start"
-              css={{
-                marginBottom: 'var(--space-5)',
-              }}
-              direction="column"
-              gap="4"
-            >
-              <Box css={{ fontSize: 'var(--font-size-1)' }}>
-                <Link href="/" legacyBehavior passHref>
-                  <Anchor arrow="left" data-testid="home-link" discreet>
-                    Home
-                  </Anchor>
-                </Link>
-              </Box>
-              <H1
-                css={{ width: '100%', textWrap: 'balance' }}
-                className="p-name"
+        <div className="mx-auto max-w-[692px] px-6 py-12 antialiased sm:py-32 md:py-16">
+          <header className="mb-16 flex flex-col gap-6">
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm font-medium text-gray-1100 no-underline transition-colors hover:text-gray-1200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
+                data-testid="home-link"
+              >
+                <span aria-hidden="true">←</span>
+                Back
+              </Link>
+            </div>
+            <div className="space-y-4">
+              <h1
+                className="text-3xl font-semibold leading-tight text-gray-1200 sm:text-[34px]"
                 data-testid="post-title"
               >
                 {title}
-              </H1>
-              <Box>
-                <Flex gap="3" wrap="wrap">
-                  <Text
-                    as="p"
-                    size="1"
-                    variant="tertiary"
-                    weight="3"
-                    css={{ marginBottom: '0px' }}
-                  >
-                    {format(new Date(Date.parse(date)), 'MMMM d, yyyy')} /{' '}
-                    {readingTime.text}
-                  </Text>
-                  <Pill variant="info">
-                    Last Updated:{' '}
-                    {format(new Date(Date.parse(updated)), 'MMMM d, yyyy')}
-                  </Pill>
-                  {/* <WebmentionCount target={postUrl} /> */}
-                </Flex>
-              </Box>
-            </Flex>
-          </Grid.Item>
-          <TableOfContent ids={ids} />
-          <Grid.Item col={2}>
-            <Flex
-              alignItems="start"
-              direction="column"
-              className={contentClass()}
-              gap="6"
-            >
-              {children}
-            </Flex>
-          </Grid.Item>
-        </Grid>
-        <Signature />
+              </h1>
+              {subtitle ? (
+                <p className="text-base leading-relaxed text-gray-1100">
+                  {subtitle}
+                </p>
+              ) : null}
+            </div>
+          </header>
+
+          <div
+            className="flex flex-col gap-10 text-gray-1100"
+            data-testid="post-content"
+          >
+            {children}
+          </div>
+
+          <footer className="mt-16 border-t border-gray-200 pt-8 text-sm text-gray-900">
+            <div className="mb-4 flex flex-wrap items-center gap-3 text-sm text-gray-900">
+              <time dateTime={date}>
+                {format(new Date(Date.parse(date)), 'MMMM d, yyyy')}
+              </time>
+              <span aria-hidden="true">•</span>
+              <span>{readingTime.text}</span>
+              <span className="inline-flex items-center rounded-full bg-gray-200 px-3 py-1 text-xs font-medium text-gray-1100">
+                Updated {format(new Date(Date.parse(updated)), 'MMMM d, yyyy')}
+              </span>
+            </div>
+            <p>
+              Found something interesting? Reach out on
+              <a
+                className="mx-1 underline"
+                href="https://twitter.com/mustafasaracAI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+              or
+              <a
+                className="mx-1 underline"
+                href="https://github.com/mustafasarac"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              .
+            </p>
+          </footer>
+        </div>
         <WebmentionBlogData date={date} postUrl={postUrl} subtitle={subtitle} />
       </article>
-    </Layout>
+    </div>
   );
 };
 

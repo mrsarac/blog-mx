@@ -1,51 +1,41 @@
-::selection {
-  background-color: var(--emphasis);
-  color: var(--accent);
+:root {
+  color-scheme: light;
 }
 
- 
-
-html {
-  font: 100%/1.2888 var(--font-display);
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  background: var(--background);
-  color: var(--text-primary);
-  font-family: Inter, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fdfdfc;
+  color: #21201c;
+  font-family: 'Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--text-primary);
-  word-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  margin: 0;
+  min-height: 100%;
 }
 
-/* [hidden],
-[aria-hidden='true'], */
 .hidden-layout {
   display: none;
 }
-/* 
-[aria-hidden='false'] {
-  display: block;
-} */
-
-/* TODO Find a way to remove the following */
-/* Patch gif wrapped in figure tag */
 
 figure {
   margin-left: 0;
   margin-right: 0;
 }
 
-img {
+img,
+video {
   max-width: 100%;
+  height: auto;
 }
 
-/* END Patch gif wrapped in figure tag */
+a {
+  color: inherit;
+}
 
 a:hover {
-  /* color: #878177; /* Update link hover color */
+  color: inherit;
 }
