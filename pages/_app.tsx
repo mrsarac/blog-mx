@@ -7,6 +7,7 @@ import {
 } from '@maximeheckel/design-system';
 import { DefaultSeo } from '@core/components/Seo';
 import { Analytics } from '@vercel/analytics/react';
+import 'styles/tailwind.css';
 import 'styles/global.css';
 import 'styles/font.css';
 

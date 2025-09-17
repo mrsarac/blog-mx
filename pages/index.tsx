@@ -1,268 +1,185 @@
-import {
-  styled,
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Icon,
-  Text,
-  VisuallyHidden,
-  H1,
-} from '@maximeheckel/design-system';
-import { format } from 'date-fns';
-import { motion } from 'framer-motion';
+import type { GetStaticProps } from 'next';
 import Link from 'next/link';
-import Layout from '@core/layout';
 import { getAllFilesFrontMatter } from 'lib/mdx';
-import { Post } from 'types/post';
-import React from 'react';
-import { templateColumnsMedium } from 'styles/grid';
+import type { Post } from 'types/post';
 
 interface Props {
   posts: Post[];
 }
 
-const WavingHand = () => {
-  const [isClient, setIsClient] = React.useState(false);
+const projects = [
+  {
+    title: 'Phinote',
+    description:
+      'A personal knowledge management app I designed to make my reading notes more useful.',
+    href: 'https://phinote.com',
+  },
+  {
+    title: 'ThemeForest Templates',
+    description:
+      'Premium web templates crafted for creators, including the Phione HTML themes.',
+    href: 'https://lab.mustafasarac.com/phione/',
+  },
+  {
+    title: 'YouTube Channel',
+    description:
+      'Videos about productivity, PKM, and the systems I build to stay curious.',
+    href: 'https://www.youtube.com/@mustafasarac/videos',
+  },
+];
 
-  React.useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  return (
-    <motion.div
-      style={{
-        marginBottom: '-20px',
-        marginRight: '-45px',
-        paddingBottom: '20px',
-        paddingRight: '45px',
-        display: 'inline-block',
-      }}
-      animate={isClient ? { rotate: 20 } : {}}
-      transition={
-        isClient
-          ? {
-              repeat: 7,
-              repeatType: 'mirror',
-              duration: 0.2,
-              delay: 0.5,
-              ease: 'easeInOut',
-              type: 'tween',
-            }
-          : {}
-      }
-    >
-      👋🏻
-    </motion.div>
-  );
-};
-
-const IndexPage = (props: Props) => {
-  const { posts } = props;
-
-  const englishPosts = posts
+const HomePage = ({ posts }: Props) => {
+  const writing = posts
     .filter((post) => post.language === 'en')
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  const turkishPosts = posts
-    .filter((post) => post.language === 'tr')
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 8);
 
   return (
-    <Layout footer header headerProps={{ offsetHeight: 256 }}>
-      <Grid gapX={4} gapY={12} templateColumns={templateColumnsMedium}>
-        <Grid.Item col={2}>
-          <Flex alignItems="start" direction="column" gap="5">
-            <H1>
-              Hi <WavingHand /> I&apos;m Mustafa and this is my web page{' '}
-              <br></br>
-              <Text
-                css={{
-                  lineHeight: 'unset',
-                  letterSpacing: '-0.5px',
-                }}
-                variant="secondary"
-                size="7"
-                weight="4"
-              >
-                and explore my posts.
-              </Text>
-            </H1>
-            <Flex
-              gap={4}
-              css={{
-                marginLeft: '-var(--space-3)',
-                marginRight: '-var(--space-3)',
-              }}
+    <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
+      <div className="mx-auto max-w-[692px] overflow-x-hidden px-6 py-12 antialiased sm:py-32 md:overflow-x-visible md:py-16">
+        <header className="mb-32 flex flex-col items-start">
+          <Link
+            href="/"
+            className="inline-block text-[15px] font-medium no-underline"
+          >
+            Mustafa Saraç
+          </Link>
+          <span className="text-[15px] font-medium leading-none text-gray-1100">
+            Frontend Engineer
+          </span>
+        </header>
+
+        <main>
+          <span className="mb-5 block text-[15px] font-medium sm:mb-6">
+            Today
+          </span>
+          <p className="text-gray-1100">
+            I work as a frontend engineer at TOMRA Sorting Digital in Cologne. I
+            like building purposeful tools for designers and engineers and
+            obsessing over how interfaces feel, behave, and help people focus.
+          </p>
+          <p className="mt-4 text-gray-1100">
+            Previously, I led design and development teams at major media
+            companies in Turkey. Now I write and speak about personal knowledge
+            management, productivity, and how AI is reshaping creative work.
+          </p>
+
+          <section className="-mb-3 mt-16 sm:mt-32">
+            <span className="mb-5 block text-[15px] font-medium sm:mb-4">
+              Projects
+            </span>
+            <div className="flex flex-col gap-7 sm:gap-4">
+              {projects.map((project) => (
+                <a
+                  key={project.title}
+                  href={project.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="-mx-3 flex flex-col rounded-md px-3 py-2 no-underline transition-colors hover:bg-[#F5F4F4] sm:py-3"
+                >
+                  <span className="font-medium">{project.title}</span>
+                  <span className="text-sm text-gray-1100">
+                    {project.description}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-16 sm:mt-32">
+            <span className="mb-5 block text-[15px] font-medium sm:mb-4">
+              Writing
+            </span>
+            <div className="flex flex-col gap-7 sm:gap-4">
+              {writing.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/posts/${post.slug}/`}
+                  className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
+                >
+                  <span className="font-medium">{post.title}</span>
+                  <span className="text-sm text-gray-1100">
+                    {post.subtitle || '—'}
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-16 pb-1 sm:mt-32">
+            <span className="mb-5 block text-[15px] font-medium sm:mb-6">
+              Newsletter
+            </span>
+            <span className="block text-gray-1100">
+              Monthly insights on PKM, productivity systems, and learning with
+              AI. No spam, just what I&apos;m experimenting with.
+            </span>
+            <form
+              action="https://newsletter.mustafasarac.com"
+              method="post"
+              target="_blank"
+              className="mt-6 flex h-10 items-center justify-between gap-2 overflow-hidden rounded-md border border-gray-200 bg-white shadow-border transition-colors focus-within:border-gray-400 focus-within:ring-2 focus-within:ring-black/20"
             >
-              <Link
-                href="/about-me"
-                style={{ textDecoration: 'none' }}
-                passHref
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="Enter your email"
+                className="h-full w-[40%] grow border-none bg-transparent px-3.5 text-[15px] text-gray-1200 placeholder:text-gray-900 outline-none"
+              />
+              <button
+                type="submit"
+                className="mr-1 h-[30px] w-[80px] rounded-[4px] bg-gray-1200 px-1.5 text-sm font-medium text-gray-100 outline-none transition-colors hover:bg-gray-1200/90 focus:shadow-focus-ring md:w-[104px] md:px-3.5"
               >
-                <Button variant="secondary" endIcon={<Icon.Arrow size="4" />}>
-                  About Me
-                </Button>
-              </Link>
+                Subscribe
+              </button>
+            </form>
+          </section>
+
+          <section className="mt-16 sm:mt-32">
+            <span className="mb-5 block text-[15px] font-medium sm:mb-6">
+              More
+            </span>
+            <span className="text-gray-1100">
+              You can see more of my work on{' '}
               <a
                 href="https://twitter.com/mustafasaracAI"
-                style={{ textDecoration: 'none' }}
-                tabIndex={-1}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
               >
-                <Button variant="secondary" endIcon={<Icon.Twitter size="4" />}>
-                  @mustafasaracAI
-                </Button>
-                <VisuallyHidden as="p">
-                  Link redirects to my Twitter profile page
-                  https://twitter.com/mustafasaracAI.
-                </VisuallyHidden>
+                Twitter
+              </a>{' '}
+              and more of my code on{' '}
+              <a
+                href="https://github.com/mustafasarac"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                GitHub
               </a>
-            </Flex>
-          </Flex>
-        </Grid.Item>
-        <Grid.Item col={2} as="section">
-          <h2>En</h2>
-          <Flex alignItems="start" direction="column" gap="5">
-            <Grid
-              as="ul"
-              css={{
-                margin: 0,
-                padding: 0,
-              }}
-              data-testid="article-list"
-              gapY={1}
-            >
-              {englishPosts.map((post) => {
-                const postDate = new Date(post.date);
-                return (
-                  <Box
-                    as="li"
-                    css={{
-                      listStyle: 'none',
-                      cursor: 'pointer',
-                      lineHeight: '1.8',
-                      letterSpacing: '0.3px',
-                    }}
-                    key={post.slug}
-                    data-testid="article-item"
-                  >
-                    <Link
-                      href={`/posts/${post.slug}/`}
-                      passHref
-                      style={{ textDecoration: 'none', fontWeight: 500 }}
-                    >
-                      <Block data-testid="article-link">
-                        <Text
-                          as="p"
-                          size="1"
-                          variant="tertiary"
-                          weight="3"
-                          css={{
-                            minWidth: '100px',
-                            marginRight: '32px',
-                            marginTop: '2px',
-                          }}
-                        >
-                          {format(postDate, 'MMM dd, yyyy')}
-                        </Text>
-                        <Text weight="3">{post.title}</Text>
-                      </Block>
-                    </Link>
-                  </Box>
-                );
-              })}
-            </Grid>
-          </Flex>
-        </Grid.Item>
-
-        <Grid.Item col={2} as="section">
-          <h2>Tr</h2>
-          <Flex alignItems="start" direction="column" gap="5">
-            <Grid
-              as="ul"
-              css={{
-                margin: 0,
-                padding: 0,
-              }}
-              data-testid="article-list"
-              gapY={1}
-            >
-              {turkishPosts.map((post) => {
-                const postDate = new Date(post.date);
-                return (
-                  <Box
-                    as="li"
-                    css={{
-                      listStyle: 'none',
-                      cursor: 'pointer',
-                      lineHeight: '1.8',
-                      letterSpacing: '0.3px',
-                    }}
-                    key={post.slug}
-                    data-testid="article-item"
-                  >
-                    <Link
-                      href={`/posts/${post.slug}/`}
-                      passHref
-                      style={{ textDecoration: 'none', fontWeight: 500 }}
-                    >
-                      <Block data-testid="article-link">
-                        <Text
-                          as="p"
-                          size="1"
-                          variant="tertiary"
-                          weight="3"
-                          css={{
-                            minWidth: '100px',
-                            marginRight: '32px',
-                            marginTop: '2px',
-                          }}
-                        >
-                          {format(postDate, 'MMM dd, yyyy')}
-                        </Text>
-                        <Text weight="3">{post.title}</Text>
-                      </Block>
-                    </Link>
-                  </Box>
-                );
-              })}
-            </Grid>
-          </Flex>
-        </Grid.Item>
-      </Grid>
-    </Layout>
+              .
+            </span>
+          </section>
+        </main>
+      </div>
+    </div>
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts = await getAllFilesFrontMatter();
-  return { props: { posts } };
-}
 
-const Block = styled(Box, {
-  display: 'flex',
-  justifyContent: 'flex-start',
-  alignItems: 'start',
-  width: '100%',
-  borderRadius: 'var(--border-radius-2)',
-  marginLeft: '-8px',
-  padding: '16px 8px',
-  boxShadow: 'none',
-  backgroundColor: 'var(--article-block-background-color, "transparent")',
-  color: 'var(--article-block-color, var(--text-primary))',
-  transition: 'background-color 0.25s, box-shadow 0.25s, color 0.25s',
-
-  '&:focus': {
-    '--article-block-background-color': 'var(--emphasis)',
-    '--article-block-color': 'var(--accent)',
-  },
-
-  '@media (hover: hover) and (pointer: fine)': {
-    '&:hover': {
-      '--article-block-background-color': 'var(--emphasis)',
-      '--article-block-color': 'var(--accent)',
+  return {
+    props: {
+      posts,
     },
-  },
-});
+  };
+};
 
-export default IndexPage;
+export default HomePage;
