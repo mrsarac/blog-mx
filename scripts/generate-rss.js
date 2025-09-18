@@ -41,8 +41,7 @@ const matter = require('gray-matter');
   try {
     const feed = new RSS({
       title: "Mustafa Saraç's Blog",
-      description:
-        "Hi I'm Mustafa, and this is my blog.",
+      description: "Hi I'm Mustafa, and this is my blog.",
       site_url: 'https://www.mustafasarac.com',
       feed_url: 'https://www.mustafasarac.com/rss.xml',
       image_url: 'https://www.mustafasarac.com/static/og/main-og-image.png',

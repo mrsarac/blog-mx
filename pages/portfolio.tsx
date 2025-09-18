@@ -250,7 +250,6 @@ const projects: Project[] = [
     period: 'Jun 2015 – Jan 2020',
     company: 'IHS Telekom',
     media: {
-      
       type: 'none',
       alt: 'Visual not available for SenderKing email automation project',
     },

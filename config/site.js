@@ -33,4 +33,3 @@ module.exports = {
   twitterDesc:
     'Mustafa Sarac is a frontend engineer and personal knowledge management enthusiast based in Germany.',
 };
-
