@@ -135,7 +135,7 @@ const projects: Project[] = [
   {
     title: 'Powercepts',
     summary:
-      'Prototype that visually organizes concept cards for teams using multilingual flows.',
+      "This website I developed for Powercepts was built with React and Next.js to showcase the company's services in a modern and user-friendly way.",
     period: '2025',
     company: 'Freelance',
     media: {
@@ -240,7 +240,7 @@ const projects: Project[] = [
       src: '/portfolio/fcase/dashboard-overview.png',
       alt: 'fCase risk analytics dashboard',
     },
-    tags: ['React', 'Node.js', 'Data Viz'],
+    tags: ['Angular', 'e2e', 'Data Viz'],
     links: [{ href: 'https://fraud.com', label: 'fraud.com' }],
   },
   {
@@ -268,6 +268,7 @@ const projects: Project[] = [
       alt: '',
     },
     tags: ['JavaScript', 'HTML', 'CSS', 'UI/UX'],
+    links: [{ href: 'https://lab.mustafasarac.com/phione/', label: 'View Live Demo' }],
   },
    
 ];
