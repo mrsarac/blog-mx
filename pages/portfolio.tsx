@@ -452,7 +452,10 @@ const PortfolioPage = () => {
           </div>
         </section>
 
-        <section aria-labelledby="awards-heading" className="mt-16 sm:mt-24 hidden">
+        <section
+          aria-labelledby="awards-heading"
+          className="mt-16 hidden sm:mt-24"
+        >
           <h2
             id="awards-heading"
             className="text-[15px] font-medium uppercase tracking-wide text-gray-1000"
