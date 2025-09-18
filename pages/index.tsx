@@ -34,6 +34,10 @@ const HomePage = ({ posts }: Props) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 8);
 
+  const turkishWriting = posts
+    .filter((post) => post.language === 'tr')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
   return (
     <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
       <div className="mx-auto max-w-[692px] overflow-x-hidden px-6 py-12 antialiased sm:py-32 md:overflow-x-visible md:py-16">
@@ -122,6 +126,28 @@ const HomePage = ({ posts }: Props) => {
               ))}
             </div>
           </section>
+
+          {turkishWriting.length > 0 && (
+            <section className="mt-16 sm:mt-32">
+              <span className="mb-5 block text-[15px] font-medium sm:mb-4">
+                Türkçe Yazılar
+              </span>
+              <div className="flex flex-col gap-7 sm:gap-4">
+                {turkishWriting.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/posts/${post.slug}/`}
+                    className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
+                  >
+                    <span className="font-medium">{post.title}</span>
+                    <span className="text-sm text-gray-1100">
+                      {post.subtitle || '—'}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <section className="mt-16 pb-1 sm:mt-32 hidden">
             <span className="mb-5 block text-[15px] font-medium sm:mb-6">
