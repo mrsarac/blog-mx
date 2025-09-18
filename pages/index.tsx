@@ -180,7 +180,7 @@ const HomePage = ({ posts }: Props) => {
               </a>{' '}
               and more of my code on{' '}
               <a
-                href="https://github.com/mustafasarac"
+                href="https://github.com/mrsarac"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline"
