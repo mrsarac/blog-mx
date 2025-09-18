@@ -42,7 +42,7 @@ const HomePage = ({ posts }: Props) => {
     <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
       <div className="mx-auto max-w-[692px] overflow-x-hidden px-6 py-12 antialiased sm:py-32 md:overflow-x-visible md:py-16">
         <header className="mb-32 flex flex-col items-start leading-7 ">
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <a className="inline-block font-medium no-underline">
               Mustafa Saraç
             </a>
@@ -90,7 +90,7 @@ const HomePage = ({ posts }: Props) => {
             </span>
             <div className="flex flex-col gap-7 sm:gap-4">
               {writing.map((post) => (
-                <Link key={post.slug} href={`/posts/${post.slug}/`}>
+                <Link key={post.slug} href={`/posts/${post.slug}/`} legacyBehavior>
                   <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
                     <span className="font-medium">{post.title}</span>
                     <span className="text-sm text-gray-1100">
@@ -109,7 +109,7 @@ const HomePage = ({ posts }: Props) => {
               </span>
               <div className="flex flex-col gap-7 sm:gap-4">
                 {turkishWriting.map((post) => (
-                  <Link key={post.slug} href={`/posts/${post.slug}/`}>
+                  <Link key={post.slug} href={`/posts/${post.slug}/`} legacyBehavior>
                     <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
                       <span className="font-medium">{post.title}</span>
                       <span className="text-sm text-gray-1100">
