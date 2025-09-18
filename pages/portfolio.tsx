@@ -263,14 +263,18 @@ const projects: Project[] = [
     period: 'Mar 2014',
     company: 'Freelance',
     media: {
-       type: 'image',
+      type: 'image',
       src: '/portfolio/phione/theme-overview.png',
       alt: '',
     },
     tags: ['JavaScript', 'HTML', 'CSS', 'UI/UX'],
-    links: [{ href: 'https://lab.mustafasarac.com/phione/', label: 'View Live Demo' }],
+    links: [
+      {
+        href: 'https://lab.mustafasarac.com/phione/',
+        label: 'View Live Demo',
+      },
+    ],
   },
-   
 ];
 
 const skillColumns = [
@@ -312,7 +316,7 @@ const PortfolioPage = () => {
                 and the outcomes they delivered.
               </p>
             </div>
-            <dl className="grid grid-cols-1 gap-3 text-sm text-gray-1100 sm:grid-cols-3 hidden">
+            <dl className="hidden grid-cols-1 gap-3 text-sm text-gray-1100 sm:grid-cols-3">
               {stats.map((item) => (
                 <div
                   key={item.label}
