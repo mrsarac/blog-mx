@@ -8,26 +8,44 @@
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
 >
   <url>
-    <loc>https://blog.maximeheckel.com/design/</loc>
+    <loc>https://mustafasarac.com/about-me/</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://blog.maximeheckel.com/</loc>
+    <loc>https://mustafasarac.com/cv/</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://blog.maximeheckel.com/og/</loc>
+    <loc>https://mustafasarac.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/og/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/portfolio/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/almanya-gunlukleri-ilk-gun/</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/advanced-animation-patterns-with-framer-motion/</loc
+      >https://mustafasarac.com/posts/almanya-gunlukleri-yeni-bir-hayata-alismak/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -35,7 +53,21 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/asynchronous-rendering-with-react-c323cda68f41/</loc
+      >https://mustafasarac.com/posts/arayuz-tasarimcilari-icin-themeforest-deneyimi/</loc
+    >
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/bir-tek-sey-gary-keller-ozet/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://mustafasarac.com/posts/envato-elite-yazarlarindan-basari-ipuclari/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -43,7 +75,45 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/automated-ui-accessibility-testing-with-cypress-cc2e38231241/</loc
+      >https://mustafasarac.com/posts/germany-diaries-adjusting-to-a-new-life/</loc
+    >
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/germany-diaries-first-day/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/i-ran/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/kindle-giris/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/kindle-introduction/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/kostum/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://mustafasarac.com/posts/okuduklarinizi-hatirlamak-readwise-ile-bir-yolculuk/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -51,7 +121,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/beautiful-and-mind-bending-effects-with-webgl-render-targets/</loc
+      >https://mustafasarac.com/posts/pomodoro-teknigini-bir-adim-ileri-tasimak-molalara-odaklanin/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -59,7 +129,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/build-personal-health-api-shortcuts-serverless/</loc
+      >https://mustafasarac.com/posts/remembering-what-you-read-with-readwise/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -67,7 +137,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/build-serverless-preview-deployment/</loc
+      >https://mustafasarac.com/posts/success-tips-from-envato-elite-authors/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -75,7 +145,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/building-a-design-system-from-scratch/</loc
+      >https://mustafasarac.com/posts/taslaklar-yaparak-tasarim-problemlerini-cozmek/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -83,7 +153,35 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/building-a-graphql-wrapper-for-the-docker-api-2109f2b9c202/</loc
+      >https://mustafasarac.com/posts/the-miracle-morning-sabah-mucizesi-hal-elrod/</loc
+    >
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/the-one-thing-gary-keller-summary/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://mustafasarac.com/posts/themeforest-experience-for-interface-designers/</loc
+    >
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://mustafasarac.com/posts/yazi-tipinin-ogrenmeye-etkisi/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc
+      >https://mustafasarac.com/posts/yazilari-hizli-bir-sekilde-webde-yayimlamak/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -91,7 +189,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/building-magical-ai-powered-semantic-search/</loc
+      >https://mustafasarac.com/posts/zamani-verimli-kullanmanin-en-akilli-yolu-nedir-pomodoro-teknigi/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
@@ -99,303 +197,7 @@
 
   <url>
     <loc
-      >https://blog.maximeheckel.com/posts/building-perfect-github-action-frontend-teams/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/creating-beautiful-screenshots-source-code-with-serverless-function/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/cubic-bezier-from-math-to-motion/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/data-fetching-with-next-js/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/duplicate-dependencies-npm-link/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/first-failed-swiftui-project/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/first-steps-with-gpt-3-and-beyond/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/framer-motion-emotion/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/framer-motion-layout-animations/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/getting-started-with-typescript-on-gatsby-8544b47c1d27/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/guide-animations-spark-joy-framer-motion/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/guide-to-cicd-for-frontend-developers/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/how-i-got-started-with-kubernetes-on-gke-5f829eca98bc/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/how-to-build-first-eslint-rule/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/https-medium-com-maximeheckel-how-to-efficiently-type-your-styled-components-with-flow-f43930a0dd2b/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/immigrating-to-the-us-my-path/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/learning-in-public/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/migrating-to-nextjs/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/painting-with-math-a-gentle-study-of-raymarching/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/preloading-views-with-react/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/react-sub-components-513f6679abed/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/react-sub-components-part-2-using-the-new-context-api-6f1c089acfe4/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/react-sub-components-part-3-whitelisting-sub-components-with-flow-b04f9bcf80c2/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/real-time-cloudscapes-with-volumetric-raymarching/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/rebuilding-redux-with-hooks-and-context-e16b59faf51c/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/refraction-dispersion-and-other-shader-light-effects/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/running-cross-browser-cypress-github-ci/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/running-golang-tests-with-jest-b5d8f3d43a7/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/scrollspy-demystified/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/seo-mistakes-i-have-made-and-how-i-fixed-them/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/static-tweets-with-mdx-nextjs/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://blog.maximeheckel.com/posts/swiftui-as-react-developer/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/switching-off-the-lights-adding-dark-mode-to-your-react-app-with-context-and-hooks-f41da6e07269/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/switching-off-the-lights-part-2-fixing-dark-mode-flashing-on-servered-rendered-website/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/the-physics-behind-spring-animations/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/the-power-of-composition-with-css-variables/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/the-study-of-shaders-with-react-three-fiber/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/using-flow-generics-to-type-generic-react-components-22dd642634d8/</loc
-    >
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc
-      >https://blog.maximeheckel.com/posts/vaporwave-3d-scene-with-threejs/</loc
+      >https://mustafasarac.com/posts/offline/_depracated_daily-success-routines-derek-franklin/</loc
     >
     <changefreq>daily</changefreq>
     <priority>0.7</priority>

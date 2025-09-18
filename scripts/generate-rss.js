@@ -41,10 +41,11 @@ const matter = require('gray-matter');
   try {
     const feed = new RSS({
       title: "Mustafa Saraç's Blog",
-      description: "Hi I'm Mustafa, and this is my blog.",
-      site_url: 'https://www.mustafasarac.com',
-      feed_url: 'https://www.mustafasarac.com/rss.xml',
-      image_url: 'https://www.mustafasarac.com/static/og/main-og-image.png',
+      description:
+        "Hi, I'm Mustafa. On this blog, I share my experiences as a frontend engineer and everything I'm learning about Vue.js, React, TypeScript, personal knowledge management, artificial intelligence, and more.",
+      site_url: 'https://mustafasarac.com',
+      feed_url: 'https://mustafasarac.com/rss.xml',
+      image_url: 'https://mustafasarac.com/static/og/main-og-image.png',
       language: 'en',
     });
 
@@ -53,7 +54,7 @@ const matter = require('gray-matter');
     );
 
     content.forEach((post) => {
-      const url = `https://blog.mustafasarac.com/posts/${post.slug}`;
+      const url = `https://mustafasarac.com/posts/${post.slug}`;
 
       feed.item({
         title: post.title,
