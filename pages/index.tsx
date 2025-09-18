@@ -42,11 +42,10 @@ const HomePage = ({ posts }: Props) => {
     <div className="min-h-screen bg-gray-100 font-sans text-gray-1200">
       <div className="mx-auto max-w-[692px] overflow-x-hidden px-6 py-12 antialiased sm:py-32 md:overflow-x-visible md:py-16">
         <header className="mb-32 flex flex-col items-start leading-7 ">
-          <Link
-            href="/"
-            className="inline-block font-medium no-underline"
-          >
-            Mustafa Saraç
+          <Link href="/">
+            <a className="inline-block font-medium no-underline">
+              Mustafa Saraç
+            </a>
           </Link>
           <span className="text-[15px] font-medium leading-none text-gray-1100">
             Frontend Engineer
@@ -54,12 +53,12 @@ const HomePage = ({ posts }: Props) => {
         </header>
 
         <main>
-          <span className="mb-5 block text-[15px] font-medium sm:mb-6 leading-6 leading-7">
+          <span className="mb-5 block text-[15px] font-medium sm:mb-6 leading-7">
             Today
           </span>
           <p className="text-gray-1100">
-            Scouting my next role, doubling down on AI experiments,
-            and documenting the process. Balance comes from studying German and
+            Scouting my next role, doubling down on AI experiments, and
+            documenting the process. Balance comes from studying German and
             chasing grooves on the drums.
           </p>
 
@@ -91,15 +90,13 @@ const HomePage = ({ posts }: Props) => {
             </span>
             <div className="flex flex-col gap-7 sm:gap-4">
               {writing.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/posts/${post.slug}/`}
-                  className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
-                >
-                  <span className="font-medium">{post.title}</span>
-                  <span className="text-sm text-gray-1100">
-                    {post.subtitle || '—'}
-                  </span>
+                <Link key={post.slug} href={`/posts/${post.slug}/`}>
+                  <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
+                    <span className="font-medium">{post.title}</span>
+                    <span className="text-sm text-gray-1100">
+                      {post.subtitle || '—'}
+                    </span>
+                  </a>
                 </Link>
               ))}
             </div>
@@ -112,15 +109,13 @@ const HomePage = ({ posts }: Props) => {
               </span>
               <div className="flex flex-col gap-7 sm:gap-4">
                 {turkishWriting.map((post) => (
-                  <Link
-                    key={post.slug}
-                    href={`/posts/${post.slug}/`}
-                    className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
-                  >
-                    <span className="font-medium">{post.title}</span>
-                    <span className="text-sm text-gray-1100">
-                      {post.subtitle || '—'}
-                    </span>
+                  <Link key={post.slug} href={`/posts/${post.slug}/`}>
+                    <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
+                      <span className="font-medium">{post.title}</span>
+                      <span className="text-sm text-gray-1100">
+                        {post.subtitle || '—'}
+                      </span>
+                    </a>
                   </Link>
                 ))}
               </div>
