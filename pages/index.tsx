@@ -58,31 +58,9 @@ const HomePage = ({ posts }: Props) => {
             Today
           </span>
           <p className="text-gray-1100">
-            I lead frontend development for TOMRA Insight, TOMRA GmbH&apos;s data
-            platform in Cologne. My days are spent evolving a Vue 3
-            architecture, shaping a Storybook-driven design system with
-            TailwindCSS, and instrumenting features with GTM, Hotjar, and GA so
-            teams can ship focused, measurable interfaces.
-          </p>
-          <p className="mt-4 text-gray-1100">
-            Before Germany, I guided frontend and design teams across telecom
-            and media companies in Turkey, launched SaaS tools like SenderKing
-            and the Fcase fraud operations suite, and delivered responsive sites
-            for MIR MEDIA. Now I write and speak about personal knowledge
-            management, productivity, and how AI is reshaping creative work.{' '}
-            <Link href="/about-me" className="underline">
-              Learn more about me
-            </Link>{' '}
-            or check out my{' '}
-            <a
-              href="/static/cv/mustafa-sarac-cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              CV
-            </a>
-            .
+            Scouting my next role, doubling down on AI experiments,
+            and documenting the process. Balance comes from studying German and
+            chasing grooves on the drums.
           </p>
 
           <section className="-mb-3 mt-16 sm:mt-32">
