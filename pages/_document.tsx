@@ -86,19 +86,6 @@ class MyDocument extends Document {
           <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <Script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-Q5GQHSWLE6"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Q5GQHSWLE6');
-            `}
-          </Script>
         </Head>
         <body className="bg-gray-100 text-gray-1200">
           <Script src="/sw.js" />
