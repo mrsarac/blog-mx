@@ -1,8 +1,9 @@
 import Logo from '@core/components/Logo';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import BlendedText from './BlendedText';
-import DotMatrix from './DotMatrix';
-import Shapes from './Shapes';
+
+const Hyperspeed = dynamic(() => import('./Hyperspeed'), { ssr: false });
 
 const OG = () => {
   const router = useRouter();
@@ -26,34 +27,12 @@ const OG = () => {
         justifyContent: 'center',
         transform: 'scale(1.5)',
         transformOrigin: 'top left',
-        // background:
-        //   'linear-gradient(250deg, #7B9FF7 20%, #E995CD 56.25%, #FCB2B2 100%)',
-        // background:
-        //   'linear-gradient(212deg, #37388F 19.79%, #6C60B8 70.31%, #A780B2 100%)',
-        // background:
-        //   'linear-gradient(212deg, #37398F 19.79%, #6075B8 70.31%, #B3DFED 100%)',
-        background:
-          background || 'linear-gradient(214deg, #A0A0A0 0%, #1F2426 96.12%)',
+        background: background || '#010101',
         position: 'relative',
         gap: '120px',
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-        }}
-      >
-        <Shapes />
-      </div>
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          position: 'absolute',
-        }}
-      >
-        <DotMatrix />
-      </div>
+      <Hyperspeed />
       <div
         style={{
           position: 'absolute',
@@ -80,7 +59,7 @@ const OG = () => {
         }}
       >
         <Logo size={65} stroke="#FFFFFF" />
-        <BlendedText>@MaximeHeckel</BlendedText>
+        <BlendedText>@mustafasaracAI</BlendedText>
       </div>
     </div>
   );
