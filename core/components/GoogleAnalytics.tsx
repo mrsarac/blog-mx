@@ -3,14 +3,9 @@ import type { FC } from 'react';
 
 interface GoogleAnalyticsProps {
   trackingId: string;
-  enabled: boolean;
 }
 
-const GoogleAnalytics: FC<GoogleAnalyticsProps> = ({ trackingId, enabled }) => {
-  if (!enabled) {
-    return null;
-  }
-
+const GoogleAnalytics: FC<GoogleAnalyticsProps> = ({ trackingId }) => {
   return (
     <>
       <Script

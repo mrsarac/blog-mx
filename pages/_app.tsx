@@ -30,6 +30,9 @@ const App = ({ Component, pageProps }: AppProps) => {
   const handleConsent = () => {
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(GA_CONSENT_KEY, 'granted');
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+      });
     }
     setHasConsent(true);
   };
@@ -44,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <DefaultSeo />
-      <GoogleAnalytics trackingId="G-Q5GQHSWLE6" enabled={hasConsent === true} />
+      {hasConsent && <GoogleAnalytics trackingId="G-Q5GQHSWLE6" />}
       <Component {...pageProps} />
       <Analytics />
       {hasConsent === false && <ConsentBanner onAccept={handleConsent} />}
