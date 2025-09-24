@@ -2,6 +2,9 @@ import type { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { getAllFilesFrontMatter } from 'lib/mdx';
 import type { Post } from 'types/post';
+import { setScrollPosition, getScrollPosition } from 'lib/scroll';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 interface Props {
   posts: Post[];
@@ -29,6 +32,19 @@ const projects = [
 ];
 
 const HomePage = ({ posts }: Props) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    const scrollPosition = getScrollPosition(router.asPath);
+    if (scrollPosition) {
+      window.scrollTo(0, scrollPosition);
+    }
+  }, [router.asPath]);
+
+  const handleLinkClick = () => {
+    setScrollPosition(router.asPath, window.scrollY);
+  };
+
   const writing = posts
     .filter((post) => post.language === 'en')
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -95,7 +111,10 @@ const HomePage = ({ posts }: Props) => {
                   href={`/posts/${post.slug}/`}
                   legacyBehavior
                 >
-                  <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
+                  <a
+                    onClick={handleLinkClick}
+                    className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
+                  >
                     <span className="font-medium">{post.title}</span>
                     <span className="text-sm text-gray-1100">
                       {post.subtitle || '—'}
@@ -118,7 +137,10 @@ const HomePage = ({ posts }: Props) => {
                     href={`/posts/${post.slug}/`}
                     legacyBehavior
                   >
-                    <a className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3">
+                    <a
+                      onClick={handleLinkClick}
+                      className="-mx-3 flex flex-col rounded-md px-3 py-2 transition-colors hover:bg-[#F5F4F4] sm:py-3"
+                    >
                       <span className="font-medium">{post.title}</span>
                       <span className="text-sm text-gray-1100">
                         {post.subtitle || '—'}
